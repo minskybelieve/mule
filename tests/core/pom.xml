@@ -6,10 +6,10 @@
         <artifactId>mule-tests</artifactId>
         <version>3.7.0-M1-SNAPSHOT</version>
     </parent>
-    <artifactId>mule-tests-functional</artifactId>
+    <artifactId>mule-tests-core</artifactId>
     <packaging>jar</packaging>
-    <name>Mule Functional Test Framework (TCK)</name>
-    <description>Mule functional test framework (TCK)</description>
+    <name>Mule Core Test Framework (TCK)</name>
+    <description>Core tests require starting a mule context</description>
 
     <properties>
         <licensePath>../../LICENSE_HEADER.txt</licensePath>
@@ -126,44 +126,13 @@
             <groupId>commons-net</groupId>
             <artifactId>commons-net</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.ftpserver</groupId>
-            <artifactId>ftpserver-core</artifactId>
-            <version>${testFtpServerVersion}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.ftpserver</groupId>
-            <artifactId>ftplet-api</artifactId>
-            <version>${testFtpServerVersion}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sshd</groupId>
-            <artifactId>sshd-core</artifactId>
-            <version>${sshCoreVersion}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk16</artifactId>
-            <version>${bouncycastleVersion}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-dbutils</groupId>
-            <artifactId>commons-dbutils</artifactId>
-            <version>${commonsDbUtilsVersion}</version>
-        </dependency>
-
 
         <!-- Unit tests -->
         <dependency>
-            <groupId>org.mule.tests</groupId>
-            <artifactId>mule-tests-core</artifactId>
+            <groupId>org.mule</groupId>
+            <artifactId>mule-core</artifactId>
             <version>${project.version}</version>
+            <type>test-jar</type>
         </dependency>
         <!-- required for ConfigurationBuilders at runtime -->
         <dependency>
@@ -176,20 +145,6 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <!-- scope needs to be compile in order
-                  to have the site build working -->
-            <!--<scope>test</scope>-->
         </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 </project>

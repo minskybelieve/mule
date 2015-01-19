@@ -11,7 +11,7 @@
                http://www.mulesoft.org/schema/mule/test http://www.mulesoft.org/schema/mule/test/current/mule-test.xsd">
 
 
-    <spring:bean class="org.mule.expression.CustomExpressionEvaluatorTestCase$FooExpressionEvaluator"/>
+    <spring:bean class="org.mule.expression.FooExpressionEvaluator"/>
 
 
     <model>

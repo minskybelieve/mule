@@ -7,8 +7,7 @@
 package org.mule.config.spring;
 
 import static org.junit.Assert.assertTrue;
-
-import org.mule.expression.CustomExpressionEvaluatorTestCase;
+import org.mule.expression.FooExpressionEvaluator;
 import org.mule.tck.junit4.FunctionalTestCase;
 
 import org.junit.Test;
@@ -24,8 +23,7 @@ public class DeclarativeCustomExpressionEvaluatorTestCase extends FunctionalTest
     @Test
     public void testCustomEvalutorRegistered()
     {
-        CustomExpressionEvaluatorTestCase.FooExpressionEvaluator customEvaluator =
-                new CustomExpressionEvaluatorTestCase.FooExpressionEvaluator();
+        FooExpressionEvaluator customEvaluator = new FooExpressionEvaluator();
         assertTrue("Custom evaluator has not been registered",
                    muleContext.getExpressionManager().isEvaluatorRegistered(customEvaluator.getName()));
     }
