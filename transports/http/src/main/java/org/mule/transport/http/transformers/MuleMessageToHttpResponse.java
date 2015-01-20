@@ -72,7 +72,7 @@ public class MuleMessageToHttpResponse extends AbstractMessageTransformer
 
         if(HttpConstants.SERVER_TIME_ZONE_PROPERTY.isEnabled())
         {
-            logger.warn(HttpMessages.dateInServerTimeZone());
+            logger.warn(HttpMessages.dateInServerTimeZone().getMessage());
             dateFormatter = dateFormatter.withZone(DateTimeZone.forID(TimeZone.getDefault().getID()));
         }
         else

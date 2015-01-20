@@ -140,7 +140,7 @@ public class SpringRegistry extends AbstractRegistry implements InitialisingRegi
         if (StringUtils.isBlank(key))
         {
             logger.warn(
-                    MessageFactory.createStaticMessage("Detected a lookup attempt with an empty or null key"),
+                    MessageFactory.createStaticMessage("Detected a lookup attempt with an empty or null key").getMessage(),
                     new Throwable().fillInStackTrace());
             return null;
         }
@@ -157,7 +157,7 @@ public class SpringRegistry extends AbstractRegistry implements InitialisingRegi
             }
             catch (NoSuchBeanDefinitionException e)
             {
-                logger.debug(e);
+                logger.debug(e.getMessage(), e);
                 return null;
             }
         }
@@ -204,7 +204,7 @@ public class SpringRegistry extends AbstractRegistry implements InitialisingRegi
         }
         catch (Exception e)
         {
-            logger.debug(e);
+            logger.debug(e.getMessage(), e);
             return Collections.emptyMap();
         }
     }
@@ -223,7 +223,7 @@ public class SpringRegistry extends AbstractRegistry implements InitialisingRegi
         }
         catch (Exception e)
         {
-            logger.debug(e);
+            logger.debug(e.getMessage(), e);
             return Collections.emptyMap();
         }
     }

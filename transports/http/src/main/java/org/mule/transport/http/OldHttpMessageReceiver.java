@@ -269,7 +269,7 @@ public class OldHttpMessageReceiver extends TcpMessageReceiver
 
             if (logger.isDebugEnabled())
             {
-                logger.debug(message.getInboundProperty(HttpConnector.HTTP_REQUEST_PROPERTY));
+                logger.debug(message.getInboundProperty(HttpConnector.HTTP_REQUEST_PROPERTY).toString());
             }
 
             // determine if the request path on this request denotes a different receiver

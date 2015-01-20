@@ -65,7 +65,7 @@ public class DbTransaction extends AbstractSingleResourceTransaction
     {
         if (resource == null)
         {
-            logger.warn(CoreMessages.commitTxButNoResource(this));
+            logger.warn(CoreMessages.commitTxButNoResource(this).getMessage());
             return;
         }
 
@@ -89,7 +89,7 @@ public class DbTransaction extends AbstractSingleResourceTransaction
     {
         if (resource == null)
         {
-            logger.warn(CoreMessages.rollbackTxButNoResource(this));
+            logger.warn(CoreMessages.rollbackTxButNoResource(this).getMessage());
             return;
         }
 

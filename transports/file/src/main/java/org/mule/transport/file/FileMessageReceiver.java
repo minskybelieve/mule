@@ -509,7 +509,7 @@ public class FileMessageReceiver extends AbstractPollingMessageReceiver
                 }
                 catch (Exception ex)
                 {
-                    logger.warn(ex);
+                    logger.warn(ex.getMessage(), ex);
                 }
             }
         }
@@ -542,7 +542,7 @@ public class FileMessageReceiver extends AbstractPollingMessageReceiver
             }
             catch (IOException iox)
             {
-                logger.warn(iox);
+                logger.warn(iox.getMessage(), iox);
             }
         }
     }

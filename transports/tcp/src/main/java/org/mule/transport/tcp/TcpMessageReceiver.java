@@ -199,7 +199,8 @@ public class TcpMessageReceiver extends AbstractMessageReceiver implements Work
         }
         catch (Exception e)
         {
-            logger.error(new DisposeException(TcpMessages.failedToCloseSocket(), e, this));
+            Exception thrown = new DisposeException(TcpMessages.failedToCloseSocket(), e, this);
+            logger.error(thrown.getMessage(), thrown);
         }
         logger.info("Closed Tcp port");
     }

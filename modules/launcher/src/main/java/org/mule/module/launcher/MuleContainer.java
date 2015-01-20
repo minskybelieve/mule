@@ -6,7 +6,6 @@
  */
 package org.mule.module.launcher;
 
-import org.mule.api.DefaultMuleException;
 import org.mule.api.MuleException;
 import org.mule.api.config.MuleProperties;
 import org.mule.config.ExceptionHelper;
@@ -117,7 +116,7 @@ public class MuleContainer
         {
             commandlineOptions = SystemUtils.getCommandLineOptions(args, CLI_OPTIONS);
         }
-        catch (DefaultMuleException me)
+        catch (MuleException me)
         {
             throw new IllegalArgumentException(me.toString());
         }

@@ -6,7 +6,6 @@
  */
 package org.mule;
 
-import org.mule.api.DefaultMuleException;
 import org.mule.api.MuleContext;
 import org.mule.api.MuleException;
 import org.mule.api.config.ConfigurationBuilder;
@@ -175,7 +174,7 @@ public class MuleServer implements Runnable
         {
             commandlineOptions = SystemUtils.getCommandLineOptions(args, CLI_OPTIONS);
         }
-        catch (DefaultMuleException me)
+        catch (MuleException me)
         {
             throw new IllegalArgumentException(me.toString());
         }

@@ -115,7 +115,7 @@ public class QuartzConnector extends AbstractConnector
         }
         catch (Exception e)
         {
-            logger.warn(CoreMessages.failedToStop("Quartz provider"), e);
+            logger.warn(CoreMessages.failedToStop("Quartz provider").getMessage(), e);
         }
 
         String instanceName = factoryProperties.getProperty(QUARTZ_INSTANCE_NAME_PROPERTY);

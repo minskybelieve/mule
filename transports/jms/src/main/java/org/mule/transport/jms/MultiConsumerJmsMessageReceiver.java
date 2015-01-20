@@ -293,7 +293,7 @@ public class MultiConsumerJmsMessageReceiver extends AbstractMessageReceiver
             }
             catch (Exception jmsEx)
             {
-                logger.error(jmsEx);
+                logger.error(jmsEx.getMessage(), jmsEx);
             }
         }
 

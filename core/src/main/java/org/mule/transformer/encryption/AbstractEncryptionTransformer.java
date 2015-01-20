@@ -13,7 +13,6 @@ import org.mule.api.transformer.TransformerException;
 import org.mule.config.i18n.CoreMessages;
 import org.mule.transformer.AbstractTransformer;
 import org.mule.transformer.types.DataTypeFactory;
-import org.mule.util.IOUtils;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

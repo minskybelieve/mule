@@ -474,7 +474,7 @@ public class JettyHttpConnector extends AbstractConnector
                 if ("localhost".equalsIgnoreCase(host) && TcpPropertyHelper.isBindingLocalhostToAllLocalInterfaces())
                 {
                     // bindingLocalhostToAllLocalInterfaces property is set, so we must bind localhost to all local interfaces.
-                    logger.warn(TcpMessages.localhostBoundToAllLocalInterfaces());
+                    logger.warn(TcpMessages.localhostBoundToAllLocalInterfaces().getMessage());
                     host = "0.0.0.0";
                 }
 

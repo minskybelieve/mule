@@ -21,7 +21,6 @@ import org.mule.construct.Flow;
 import org.mule.processor.strategy.SynchronousProcessingStrategy;
 import org.mule.transport.AbstractConnector;
 import org.mule.transport.AbstractPollingMessageReceiver;
-import org.mule.util.lock.LockFactory;
 
 import java.io.FilenameFilter;
 import java.io.IOException;
@@ -31,9 +30,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 import javax.resource.spi.work.Work;
 
@@ -322,7 +319,7 @@ public class FtpMessageReceiver extends AbstractPollingMessageReceiver
                         }
                         catch (Exception e1)
                         {
-                            logger.error(e);
+                            logger.error(e.getMessage(), e);
                         }
                     }
                 }
@@ -341,7 +338,7 @@ public class FtpMessageReceiver extends AbstractPollingMessageReceiver
                         }
                         catch (Exception e)
                         {
-                            logger.error(e);
+                            logger.error(e.getMessage(), e);
                         }
                     }
                     currentFiles.remove(name);

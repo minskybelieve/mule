@@ -60,7 +60,7 @@ public class JdbcMessageReceiver extends TransactedPollingMessageReceiver
         this.setReceiveMessagesInTransaction(receiveMessageInTransaction && transactedEndpoint);
         if (receiveMessageInTransaction && !transactedEndpoint)
         {
-            logger.warn(JdbcMessages.forcePropertyNoTransaction(RECEIVE_MESSAGE_IN_TRANSCTION, "transaction"));
+            logger.warn(JdbcMessages.forcePropertyNoTransaction(RECEIVE_MESSAGE_IN_TRANSCTION, "transaction").getMessage());
             receiveMessageInTransaction = false;
         }
 
@@ -68,12 +68,12 @@ public class JdbcMessageReceiver extends TransactedPollingMessageReceiver
             RECEIVE_MESSAGES_IN_XA_TRANSCTION, false);
         if (receiveMessagesInXaTransaction && !receiveMessageInTransaction)
         {
-            logger.warn(JdbcMessages.forceProperty(RECEIVE_MESSAGES_IN_XA_TRANSCTION, RECEIVE_MESSAGE_IN_TRANSCTION));
+            logger.warn(JdbcMessages.forceProperty(RECEIVE_MESSAGES_IN_XA_TRANSCTION, RECEIVE_MESSAGE_IN_TRANSCTION).getMessage());
             receiveMessagesInXaTransaction = false;
         }
         else if (receiveMessagesInXaTransaction && isReceiveMessagesInTransaction() && !xaTransactedEndpoint)
         {
-            logger.warn(JdbcMessages.forcePropertyNoTransaction(RECEIVE_MESSAGES_IN_XA_TRANSCTION, "XA transaction"));
+            logger.warn(JdbcMessages.forcePropertyNoTransaction(RECEIVE_MESSAGES_IN_XA_TRANSCTION, "XA transaction").getMessage());
             receiveMessagesInXaTransaction = false;
         }
 
@@ -257,7 +257,7 @@ public class JdbcMessageReceiver extends TransactedPollingMessageReceiver
             if (resultList != null && resultList.size() > 1 && isReceiveMessagesInTransaction() && !receiveMessagesInXaTransaction)
             {
                 aggregateResult = true;
-                logger.warn(JdbcMessages.moreThanOneMessageInTransaction(RECEIVE_MESSAGE_IN_TRANSCTION, RECEIVE_MESSAGES_IN_XA_TRANSCTION));
+                logger.warn(JdbcMessages.moreThanOneMessageInTransaction(RECEIVE_MESSAGE_IN_TRANSCTION, RECEIVE_MESSAGES_IN_XA_TRANSCTION).getMessage());
                 List singleResultList = new ArrayList(1);
                 singleResultList.add(resultList);
                 return singleResultList;
