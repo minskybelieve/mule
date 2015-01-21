@@ -34,7 +34,7 @@ public class TransformerChain extends AbstractMessageTransformer
         {
             throw new IllegalArgumentException("You must set at least one transformer");
         }
-        this.transformers = new LinkedList<Transformer>(transformers);
+        this.transformers = new LinkedList<>(transformers);
     }
 
     public TransformerChain(Transformer... transformers)

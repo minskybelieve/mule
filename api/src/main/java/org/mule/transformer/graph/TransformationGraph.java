@@ -12,9 +12,9 @@ import org.mule.api.transformer.DataType;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jgrapht.graph.DirectedMultigraph;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Represents the set of transformations between {@link DataType} based on the
@@ -23,7 +23,7 @@ import org.jgrapht.graph.DirectedMultigraph;
 public class TransformationGraph extends DirectedMultigraph<DataType<?>, TransformationEdge>
 {
 
-    protected final Log logger = LogFactory.getLog(getClass());
+    protected final Logger logger = LoggerFactory.getLogger(getClass());
     
     private Set<Converter> registeredConverters = new HashSet<Converter>();
     

@@ -4,18 +4,16 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.config.spring;
+package org.mule.registry.spring;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
 import static org.junit.Assert.assertThat;
-
 import org.mule.api.registry.Registry;
 import org.mule.registry.AbstractRegistryTestCase;
 
 import java.util.Collection;
 
-import org.hamcrest.core.Is;
 import org.junit.Test;
 import org.springframework.context.support.StaticApplicationContext;
 
@@ -60,7 +58,7 @@ public class SpringRegistryTestCase extends AbstractRegistryTestCase
     {
         createSpringRegistryWithParentContext();
         parentApplicationContext.registerSingleton(BEAN_KEY, Object.class);
-        assertThat(springRegistry.get(BEAN_KEY), Is.is(Object.class));
+        assertThat(springRegistry.get(BEAN_KEY), is(Object.class));
     }
 
     @Test

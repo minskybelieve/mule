@@ -4,7 +4,7 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.config.spring;
+package org.mule.registry.spring;
 
 import static org.mule.config.i18n.MessageFactory.createStaticMessage;
 import org.mule.api.MuleContext;
@@ -24,7 +24,6 @@ import org.mule.config.bootstrap.BootstrapObjectFactory;
 import org.mule.config.bootstrap.ClassPathRegistryBootstrapDiscoverer;
 import org.mule.config.bootstrap.RegistryBootstrapDiscoverer;
 import org.mule.config.i18n.CoreMessages;
-import org.mule.config.spring.factories.BootstrapObjectFactoryBean;
 import org.mule.registry.MuleRegistryHelper;
 import org.mule.transformer.TransformerUtils;
 import org.mule.transformer.types.DataTypeFactory;

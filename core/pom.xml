@@ -129,11 +129,6 @@
             <artifactId>mule-mvel2</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.jgrapht</groupId>
-            <artifactId>jgrapht-jdk1.5</artifactId>
-            <version>0.7.3</version>
-        </dependency>
-        <dependency>
             <groupId>org.mule</groupId>
             <artifactId>mule-api</artifactId>
             <version>${project.version}</version>
@@ -150,6 +145,12 @@
         </dependency>
 
         <!-- test dependencies -->
+        <dependency>
+            <groupId>org.mule</groupId>
+            <artifactId>mule-api</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+        </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>

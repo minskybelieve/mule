@@ -19,15 +19,15 @@ import org.mule.util.SpiUtils;
 import java.util.Properties;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Factory used to create a new service descriptor.
  */
 public class ServiceDescriptorFactory
 {
-    protected static Log logger = LogFactory.getLog(ServiceDescriptorFactory.class);
+    protected static Logger logger = LoggerFactory.getLogger(ServiceDescriptorFactory.class);
 
     /**
      * Factory method to create a new service descriptor.
@@ -97,7 +97,7 @@ public class ServiceDescriptorFactory
         }
         else if (type.equals(ServiceType.MODEL))
         {
-            logger.warn(CoreMessages.modelDeprecated());
+            logger.warn(CoreMessages.modelDeprecated().getMessage());
             sd = new DefaultModelServiceDescriptor(name, props);
         }
         else

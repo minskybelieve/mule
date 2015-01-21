@@ -32,8 +32,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Will discover transformers based on type information only. It looks for transformers that support
@@ -45,7 +45,7 @@ public class TypeBasedTransformerResolver implements TransformerResolver, MuleCo
     /**
      * logger used by this class
      */
-    protected transient final Log logger = LogFactory.getLog(TypeBasedTransformerResolver.class);
+    protected transient final Logger logger = LoggerFactory.getLogger(TypeBasedTransformerResolver.class);
 
     private ObjectToString objectToString;
     private ObjectToByteArray objectToByteArray;

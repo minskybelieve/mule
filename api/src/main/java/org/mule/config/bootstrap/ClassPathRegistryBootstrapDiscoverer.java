@@ -17,8 +17,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -37,7 +37,7 @@ public class ClassPathRegistryBootstrapDiscoverer implements RegistryBootstrapDi
 
     private static final String BOOTSTRAP_PROPERTIES = "META-INF/services/org/mule/config/registry-bootstrap.properties";
 
-    private final transient Log logger = LogFactory.getLog(getClass());
+    private final transient Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
      * {@inheritDoc}
