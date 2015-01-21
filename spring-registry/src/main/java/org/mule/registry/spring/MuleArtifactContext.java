@@ -4,21 +4,21 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.config.spring;
+package org.mule.registry.spring;
 
 import org.mule.api.MuleContext;
 import org.mule.api.MuleRuntimeException;
 import org.mule.api.config.MuleProperties;
 import org.mule.config.ConfigResource;
 import org.mule.config.bootstrap.BootstrapException;
+import org.mule.config.spring.MissingParserProblemReporter;
+import org.mule.config.spring.MuleBeanDefinitionDocumentReader;
 import org.mule.registry.spring.processors.ExpressionEnricherPostProcessor;
 import org.mule.registry.spring.processors.ExpressionEvaluatorPostProcessor;
 import org.mule.registry.spring.processors.GlobalNamePostProcessor;
 import org.mule.registry.spring.processors.LifecycleStatePostProcessor;
-import org.mule.registry.spring.InitialisingBeanDefintionRegistry;
-import org.mule.registry.spring.NotificationListenersPostProcessor;
-import org.mule.registry.spring.SpringRegistryBootstrap;
 import org.mule.registry.spring.processors.MuleContextPostProcessor;
+import org.mule.registry.spring.processors.NotificationListenersPostProcessor;
 import org.mule.util.IOUtils;
 
 import java.io.IOException;
@@ -54,7 +54,7 @@ public class MuleArtifactContext extends AbstractXmlApplicationContext
      * the spring ApplicationContext
      *
      * @param configResources
-     * @see org.mule.config.spring.SpringRegistry
+     * @see org.mule.registry.spring.SpringRegistry
      */
     public MuleArtifactContext(MuleContext muleContext, ConfigResource[] configResources)
             throws BeansException

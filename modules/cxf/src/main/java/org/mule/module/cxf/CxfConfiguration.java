@@ -12,7 +12,7 @@ import org.mule.api.context.MuleContextAware;
 import org.mule.api.lifecycle.Disposable;
 import org.mule.api.lifecycle.Initialisable;
 import org.mule.api.lifecycle.InitialisationException;
-import org.mule.config.spring.SpringRegistry;
+import org.mule.registry.spring.SpringRegistry;
 import org.mule.module.cxf.support.MuleHeadersInInterceptor;
 import org.mule.module.cxf.support.MuleHeadersOutInterceptor;
 import org.mule.module.cxf.support.MuleProtocolHeadersOutInterceptor;
@@ -55,7 +55,7 @@ public class CxfConfiguration implements Initialisable, Disposable, MuleContextA
     public void initialise() throws InitialisationException
     {
         BusFactory.setDefaultBus(null);
-        ApplicationContext context = (ApplicationContext) muleContext.getRegistry().lookupObject(SpringRegistry.SPRING_APPLICATION_CONTEXT);
+        ApplicationContext context = muleContext.getRegistry().lookupObject(SpringRegistry.SPRING_APPLICATION_CONTEXT);
 
         if (configurationLocation != null)
         {

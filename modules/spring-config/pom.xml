@@ -30,7 +30,7 @@
         </dependency>
         <dependency>
             <groupId>org.mule</groupId>
-            <artifactId>spring-registry</artifactId>
+            <artifactId>mule-spring-registry</artifactId>
             <version>${project.version}</version>
         </dependency>
 

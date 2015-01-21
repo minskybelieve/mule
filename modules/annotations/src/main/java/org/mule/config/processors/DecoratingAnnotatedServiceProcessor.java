@@ -45,8 +45,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This object processor allows users to register annotated services directly to the registry
@@ -60,7 +60,7 @@ public class DecoratingAnnotatedServiceProcessor implements PreInitProcessor, Mu
     /**
      * logger used by this class
      */
-    protected transient final Log logger = LogFactory.getLog(DecoratingAnnotatedServiceProcessor.class);
+    protected transient final Logger logger = LoggerFactory.getLogger(DecoratingAnnotatedServiceProcessor.class);
 
     protected MuleContext context;
     private final TemplateParser parser = TemplateParser.createAntStyleParser();

@@ -9,7 +9,7 @@
         <artifactId>mule</artifactId>
         <version>3.7.0-M1-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-registry</artifactId>
+    <artifactId>mule-spring-registry</artifactId>
     <packaging>jar</packaging>
     <name>Spring Registry</name>
     <description>
@@ -28,8 +28,40 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-annotations</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>org.mule</groupId>
+            <artifactId>mule-api</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

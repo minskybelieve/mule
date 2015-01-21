@@ -16,8 +16,8 @@ import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An abstract resolver that can be extend to resolve/create an object based on Annotated classes. These classes can be
@@ -31,7 +31,7 @@ public abstract class AbstractAnnotatedTransformerArgumentResolver implements Tr
     /**
      * logger used by this class
      */
-    protected transient final Log logger = LogFactory.getLog(getClass());
+    protected transient final Logger logger = LoggerFactory.getLogger(getClass());
 
     //We cache the Json classes so we don't scan them each time a context is needed
     private Set<Class> matchingClasses = new CopyOnWriteArraySet<Class>();

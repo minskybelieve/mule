@@ -21,8 +21,8 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Member;
 import java.util.Collection;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Loads the default expression, router and endpoint parsers provided by Mule.  Mule modules can add to these by
@@ -33,7 +33,7 @@ public class RegistryBackedAnnotationsParserFactory implements AnnotationsParser
     /**
      * logger used by this class
      */
-    protected transient final Log logger = LogFactory.getLog(RegistryBackedAnnotationsParserFactory.class);
+    protected transient final Logger logger = LoggerFactory.getLogger(RegistryBackedAnnotationsParserFactory.class);
 
     protected MuleContext muleContext;
 

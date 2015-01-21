@@ -6,8 +6,6 @@
  */
 package org.mule.config.expression;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.mule.api.MuleContext;
 import org.mule.api.expression.ExpressionAnnotationParser;
 import org.mule.api.lifecycle.InitialisationException;
@@ -21,12 +19,15 @@ import org.mule.expression.transformers.ExpressionTransformer;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * TODO
  */
 public class ExpressionAnnotationsHelper
 {
-    protected static Log logger = LogFactory.getLog(ExpressionAnnotationsHelper.class);
+    protected static Logger logger = LoggerFactory.getLogger(ExpressionAnnotationsHelper.class);
 
     public static ExpressionTransformer getTransformerForMethodWithAnnotations(Method method, MuleContext context) throws TransformerException, InitialisationException
     {

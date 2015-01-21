@@ -4,11 +4,11 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.config.spring;
+package org.mule.registry.spring;
 
 import org.mule.api.MuleContext;
 import org.mule.config.ConfigResource;
-import org.mule.registry.spring.SpringRegistryBootstrap;
+import org.mule.config.spring.MuleDomainBeanDefinitionDocumentReader;
 
 import org.springframework.beans.BeansException;
 

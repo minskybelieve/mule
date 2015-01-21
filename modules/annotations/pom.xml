@@ -25,7 +25,7 @@
         <!-- Mule Dependencies -->
         <dependency>
             <groupId>org.mule</groupId>
-            <artifactId>mule-core</artifactId>
+            <artifactId>mule-api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
