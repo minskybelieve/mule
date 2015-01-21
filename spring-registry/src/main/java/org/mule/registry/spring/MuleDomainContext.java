@@ -17,10 +17,10 @@ import org.springframework.beans.BeansException;
  *
  * @since 3.6.0
  */
-final class MuleDomainContext extends MuleArtifactContext
+public class MuleDomainContext extends MuleArtifactContext
 {
 
-    MuleDomainContext(MuleContext muleContext, ConfigResource[] configResources) throws BeansException
+    public MuleDomainContext(MuleContext muleContext, ConfigResource[] configResources) throws BeansException
     {
         super(muleContext, configResources);
     }

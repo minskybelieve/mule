@@ -8,33 +8,19 @@ package org.mule.config.spring;
 
 import org.mule.api.MuleContext;
 import org.mule.config.ConfigResource;
-import org.mule.registry.spring.SpringRegistryBootstrap;
 
 import org.springframework.beans.BeansException;
 
 /**
- * A specialization of {@link MuleArtifactContext} for domains
- *
- * @since 3.6.0
+ * @deprecated since Mule 3.7.0. Please use {@link org.mule.registry.spring.MuleDomainContext} instead. This class
+ * wil be removed in Mule 4.0
  */
-final class MuleDomainContext extends MuleArtifactContext
+@Deprecated
+final class MuleDomainContext extends org.mule.registry.spring.MuleDomainContext
 {
 
-    MuleDomainContext(MuleContext muleContext, ConfigResource[] configResources) throws BeansException
+    public MuleDomainContext(MuleContext muleContext, ConfigResource[] configResources) throws BeansException
     {
         super(muleContext, configResources);
-    }
-
-    @Override
-    protected Class<MuleDomainBeanDefinitionDocumentReader> getBeanDefinitionDocumentReaderClass()
-    {
-        return MuleDomainBeanDefinitionDocumentReader.class;
-    }
-
-    @Override
-    protected void initialiseBootstrap(SpringRegistryBootstrap bootstrap)
-    {
-        super.initialiseBootstrap(bootstrap);
-        bootstrap.setSupportedArtifactType(SpringRegistryBootstrap.ArtifactType.DOMAIN);
     }
 }

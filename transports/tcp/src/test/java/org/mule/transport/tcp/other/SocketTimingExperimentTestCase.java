@@ -6,6 +6,7 @@
  */
 package org.mule.transport.tcp.other;
 
+import static org.junit.Assert.assertEquals;
 import org.mule.tck.junit4.AbstractMuleTestCase;
 
 import java.io.IOException;
@@ -14,8 +15,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * This was an attempt to understand the issue we saw with HTTP closing early.
@@ -38,7 +37,7 @@ public class SocketTimingExperimentTestCase extends AbstractMuleTestCase
         }
         catch (Exception e)
         {
-            logger.info(e);
+            logger.info(e.getMessage(), e);
         }
         try
         {
@@ -47,7 +46,7 @@ public class SocketTimingExperimentTestCase extends AbstractMuleTestCase
         }
         catch (Exception e)
         {
-            logger.info(e);
+            logger.info(e.getMessage(), e);
         }
     }
 
