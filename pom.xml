@@ -1994,6 +1994,7 @@
                                         <packages>org.mule.tools.*</packages>
                                     </group>
                                 </groups>
+                                <additionalparam>-Xdoclint:none</additionalparam>
                             </configuration>
                         </reportPlugin>
                         <!--
