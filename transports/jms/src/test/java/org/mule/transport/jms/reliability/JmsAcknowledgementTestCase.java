@@ -39,28 +39,6 @@ public class JmsAcknowledgementTestCase extends AbstractJmsReliabilityTestCase
     }
 
     @Test
-    public void testAutoAckSync2() throws Exception
-    {
-        acknowledgeMode = Session.AUTO_ACKNOWLEDGE;
-
-        Message msg = readMessageFromQueue("sanity");
-        System.out.println("1: " + msg);
-        assertNull(msg);
-
-        putMessageOnQueue("sanity");
-
-        // Read message from queue
-        msg = readMessageFromQueue("sanity");
-        System.out.println("2: " + msg);
-        assertNotNull(msg);
-
-        // No more messages
-        msg = readMessageFromQueue("sanity");
-        System.out.println("3: " + msg);
-        assertNull(msg);
-    }
-
-    @Test
     public void testClientAckSync() throws Exception
     {
         acknowledgeMode = Session.CLIENT_ACKNOWLEDGE;
@@ -183,5 +161,6 @@ public class JmsAcknowledgementTestCase extends AbstractJmsReliabilityTestCase
         // Delivery failed so message should be back on the queue
         Message msg = readMessageFromQueue("sanity");
         assertNotNull(msg);
+        msg.acknowledge();
     }
 }
